@@ -13,7 +13,7 @@ public class Jugador {
     }
 
     private void updateData() {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/Registros.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/Registros.txt"))) {
             bw.write(nombreCuenta + ";" + medallas);
             bw.newLine();
         } catch (IOException err) {
