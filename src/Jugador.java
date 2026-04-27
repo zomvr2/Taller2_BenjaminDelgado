@@ -13,7 +13,6 @@ public class Jugador {
         this.nombre = nombre;
         this.medallas = medallas;
         this.pokemones = new ArrayList<>();
-        updateData();
     }
 
     public String getNombre() {
@@ -25,7 +24,7 @@ public class Jugador {
         updateData();
     }
 
-    private void updateData() {
+    public void updateData() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/Registros.txt"))) {
             bw.write(nombre + ";" + medallas);
             bw.newLine();

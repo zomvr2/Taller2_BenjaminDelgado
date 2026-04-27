@@ -15,6 +15,7 @@ public class Pokedex {
         for (int i = 0; i < pokemones.size(); i++) {
             if (pokemones.get(i).getNombre().equals(nombre)) {
                 found = pokemones.get(i);
+                break;
             }
         }
         return found;

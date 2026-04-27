@@ -23,14 +23,14 @@ public class Main {
                 String linea = scanner.nextLine();
                 if (!linea.isEmpty()) {
                     String[] partes = linea.split(";");
-                    String nombrePokemon = partes[0];
-                    String estadoPokemon = partes[1];
+                    String nombre = partes[0];
+                    String estado = partes[1];
 
-                    Pokemon match = pokedex.buscarPokemon(nombrePokemon);
+                    Pokemon match = pokedex.buscarPokemon(nombre);
 
                     if (match != null) {
-                        match.setEstado(estadoPokemon);
-                        j.agregarPokemon(match);
+                        Pokemon actual = new Pokemon(match, estado);
+                        j.agregarPokemon(actual);
                     }
                 }
             }

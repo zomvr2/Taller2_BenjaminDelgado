@@ -33,6 +33,21 @@ public class Pokemon {
         this.defensaEspecialBase = defensaEspecialBase;
         this.velocidadBase = velocidadBase;
         this.tipo = tipo;
+        this.estado = "Vivo";
+    }
+
+    public Pokemon(Pokemon base, String estado) {
+        this.nombre = base.nombre;
+        this.habitat = base.habitat;
+        this.probAparicion = base.probAparicion;
+        this.hpBase = base.hpBase;
+        this.ataqueBase = base.ataqueBase;
+        this.defensaBase = base.defensaBase;
+        this.ataqueEspecialBase = base.ataqueEspecialBase;
+        this.defensaEspecialBase = base.defensaEspecialBase;
+        this.velocidadBase = base.velocidadBase;
+        this.tipo = base.tipo;
+        this.estado = estado;
     }
 
     public String getNombre() {

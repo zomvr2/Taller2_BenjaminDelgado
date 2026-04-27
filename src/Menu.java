@@ -28,6 +28,7 @@ public class Menu {
                 case 2:
                     String nombre = procesarInput("Ingrese su apodo de jugador: ");
                     jugador = new Jugador(nombre, 0);
+                    jugador.updateData();
                     continuar();
                     break;
                 case 3:
