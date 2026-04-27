@@ -42,4 +42,8 @@ public class Pokemon {
     public String getEstado() {
         return this.estado;
     }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }

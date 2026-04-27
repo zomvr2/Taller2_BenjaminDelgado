@@ -42,6 +42,7 @@ public class Menu {
 
     public void continuar() {
         boolean showing = true;
+        System.out.printf("Bienvenido, %s!%n", jugador.getNombre());
         while (showing) {
             System.out.println("1) Revisar equipo.");
             System.out.println("2) Salir a capturar.");

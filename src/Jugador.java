@@ -4,20 +4,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Jugador {
-    private String nombreCuenta;
+    private String nombre;
     private int medallas;
     ArrayList<Pokemon> pokemones;
 
 
-    public Jugador(String nombreCuenta, int medallas) {
-        this.nombreCuenta = nombreCuenta;
+    public Jugador(String nombre, int medallas) {
+        this.nombre = nombre;
         this.medallas = medallas;
+        this.pokemones = new ArrayList<>();
+        updateData();
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void agregarPokemon(Pokemon pokemon) {
+        this.pokemones.add(pokemon);
         updateData();
     }
 
     private void updateData() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/Registros.txt"))) {
-            bw.write(nombreCuenta + ";" + medallas);
+            bw.write(nombre + ";" + medallas);
             bw.newLine();
             if (!pokemones.isEmpty()) {
                 for (int i = 0; i < pokemones.size(); i++) {
