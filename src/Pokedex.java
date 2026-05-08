@@ -21,6 +21,18 @@ public class Pokedex {
         return found;
     }
 
+    public ArrayList<Pokemon> getPokemonesByHabitat(String habitat) {
+        ArrayList<Pokemon> found = new ArrayList<>();
+
+        for (int i = 0; i < pokemones.size(); i++) {
+            if (pokemones.get(i).getHabitat().equals(habitat)) {
+                found.add(pokemones.get(i));
+            }
+        }
+
+        return found;
+    }
+
     private void cargarPokedex() {
         try (Scanner scanner = new Scanner(new File("src/files/Pokedex.txt"))) {
             while (scanner.hasNextLine()) {

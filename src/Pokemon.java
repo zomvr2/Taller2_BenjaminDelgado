@@ -54,8 +54,28 @@ public class Pokemon {
         return this.nombre;
     }
 
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public double getProbAparicion() {
+        return this.probAparicion;
+    }
+
+    public int getStatsTotales() {
+        return hpBase + ataqueBase + defensaBase + ataqueEspecialBase + defensaEspecialBase + velocidadBase;
+    }
+
     public String getEstado() {
         return this.estado;
+    }
+
+    public boolean isVivo() {
+        return this.estado.equals("Vivo");
+    }
+
+    public String getHabitat() {
+        return this.habitat;
     }
 
     public void setEstado(String estado) {

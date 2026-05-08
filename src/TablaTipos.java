@@ -1,3 +1,5 @@
+import java.text.Normalizer;
+
 public class TablaTipos {
 
     // Matriz de efectividad
@@ -22,4 +24,47 @@ public class TablaTipos {
             {  1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5, 0.5 }, // SINIESTRO
             {  1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 2.0, 1.0 }  // HADA
     };
+
+    private static final String[] TIPOS = {
+            "NORMAL",
+            "FUEGO",
+            "AGUA",
+            "PLANTA",
+            "ELECTRICO",
+            "HIELO",
+            "LUCHA",
+            "VENENO",
+            "TIERRA",
+            "VOLADOR",
+            "PSIQUICO",
+            "BICHO",
+            "ROCA",
+            "FANTASMA",
+            "DRAGON",
+            "ACERO",
+            "SINIESTRO",
+            "HADA"
+    };
+
+    public static double getMultiplicador(String tipoAtacante, String tipoDefensor) {
+        int idxAtacante = getIndexTipo(tipoAtacante);
+        int idxDefensor = getIndexTipo(tipoDefensor);
+
+        if (idxAtacante == -1 || idxDefensor == -1) return 1.0;
+        return EFECTIVIDAD[idxAtacante][idxDefensor];
+    }
+
+    private static int getIndexTipo(String tipo) {
+        String normalizado = normalizarTipo(tipo);
+        for (int i = 0; i < TIPOS.length; i++) {
+            if (TIPOS[i].equals(normalizado)) return i;
+        }
+        return -1;
+    }
+
+    private static String normalizarTipo(String tipo) {
+        if (tipo == null) return "";
+        String sinTildes = Normalizer.normalize(tipo, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+        return sinTildes.trim().toUpperCase();
+    }
 }

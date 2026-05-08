@@ -1,0 +1,7 @@
+benjamonsh;0
+Mewtwo;Vivo
+Reshiram;Vivo
+Groudon;Vivo
+Tyranitar;Vivo
+Dragapult;Vivo
+Hydrapple;Vivo
